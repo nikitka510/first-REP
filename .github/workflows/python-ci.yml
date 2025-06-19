@@ -20,5 +20,5 @@ jobs:
         pip install pytest
     
     - name: Run tests with pytest
-      run: |
-        pytest tests/ -v  # Замените 'tests/' на путь к вашим тестам
+      run:
+        pytest
