@@ -109,3 +109,12 @@ def test_builder_fluent_interface(gaming_builder):
     assert builder is gaming_builder
     builder = gaming_builder.set_gpu("test")
     assert builder is gaming_builder
+
+
+# Специально падающий тест
+def test_failing_condition():
+    """Этот тест специально написан чтобы падать - проверяет нереалистичное условие"""
+    builder = OfficeComputerBuilder()
+    computer = builder.set_cpu("i5").get_computer()
+    # Это утверждение неверно, так как офисный компьютер добавляет префикс "Энергоэффективный"
+    assert computer.cpu == "i5", "Офисный компьютер должен добавлять префикс к процессору"
